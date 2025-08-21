@@ -7,12 +7,12 @@ export const rootPaths = {
 
 export default {
   dashboard: `/`,
+  products: `/${rootPaths.pageRoot}/products`,
+  orders: `/${rootPaths.pageRoot}/orders`,
+  customers: `/${rootPaths.pageRoot}/customers`,
+  inventory: `/${rootPaths.pageRoot}/inventory`,
+  loidAi: `/${rootPaths.pageRoot}/loid-ai`,
   analytics: `/${rootPaths.pageRoot}/analytics`,
-  invoice: `/${rootPaths.pageRoot}/invoice`,
-  schedule: `/${rootPaths.pageRoot}/schedule`,
-  calendar: `/${rootPaths.pageRoot}/calendar`,
-  messages: `/${rootPaths.pageRoot}/messages`,
-  notification: `/${rootPaths.pageRoot}/notification`,
   settings: `/${rootPaths.pageRoot}/settings`,
 
   signin: `/${rootPaths.authRoot}/signin`,

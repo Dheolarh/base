@@ -9,6 +9,13 @@ const App = lazy(() => import('App'));
 const MainLayout = lazy(() => import('layouts/main-layout'));
 const AuthLayout = lazy(() => import('layouts/auth-layout'));
 const Dashboard = lazy(() => import('pages/dashboard'));
+const Products = lazy(() => import('pages/products'));
+const Orders = lazy(() => import('pages/orders'));
+const Customers = lazy(() => import('pages/customers'));
+const Inventory = lazy(() => import('pages/inventory'));
+const LoidAI = lazy(() => import('pages/loid-ai'));
+const Analytics = lazy(() => import('pages/analytics'));
+const Settings = lazy(() => import('pages/settings'));
 const SignIn = lazy(() => import('pages/authentication/SignIn'));
 const SignUp = lazy(() => import('pages/authentication/SignUp'));
 const ResetPassword = lazy(() => import('pages/authentication/ResetPassword'));
@@ -35,6 +42,34 @@ const routes = [
           {
             index: true,
             element: <Dashboard />,
+          },
+          {
+            path: 'pages/products',
+            element: <Products />,
+          },
+          {
+            path: 'pages/orders',
+            element: <Orders />,
+          },
+          {
+            path: 'pages/customers',
+            element: <Customers />,
+          },
+          {
+            path: 'pages/inventory',
+            element: <Inventory />,
+          },
+          {
+            path: 'pages/loid-ai',
+            element: <LoidAI />,
+          },
+          {
+            path: 'pages/analytics',
+            element: <Analytics />,
+          },
+          {
+            path: 'pages/settings',
+            element: <Settings />,
           },
         ],
       },
