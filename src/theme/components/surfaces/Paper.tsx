@@ -4,10 +4,14 @@ import { Components } from '@mui/material/styles/components';
 const Paper: Components<Omit<Theme, 'components'>>['MuiPaper'] = {
   styleOverrides: {
     root: ({ theme }) => ({
-      padding: theme.spacing(3.5),
+      padding: theme.spacing(2.5, 3.5),
       backgroundColor: theme.palette.info.lighter,
       borderRadius: theme.shape.borderRadius * 2.5,
       boxShadow: 'none',
+      
+      [theme.breakpoints.down('sm')]: {
+        padding: theme.spacing(2, 2.5),
+      },
 
       '&.MuiMenu-paper': {
         padding: theme.spacing(1),

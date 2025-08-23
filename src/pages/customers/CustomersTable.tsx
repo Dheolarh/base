@@ -55,7 +55,8 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     flex: 2,
     minWidth: 200,
     renderCell: (params) => {
-      const customerName = customerNames[params.row.id.slice(-1) % customerNames.length];
+      const idString = String(params.row.id);
+      const customerName = customerNames[parseInt(idString.slice(-1)) % customerNames.length];
       const email = customerName.toLowerCase().replace(' ', '.') + '@email.com';
       
       return (
