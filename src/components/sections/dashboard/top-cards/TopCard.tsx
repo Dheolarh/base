@@ -10,40 +10,48 @@ interface TopCardProps {
 
 const TopCard = ({ data }: TopCardProps) => {
   return (
-    <Stack component={Paper} p={{ xs: 2, sm: 3 }} alignItems="center" spacing={{ xs: 1.5, sm: 2.5 }}>
-      <Stack
-        alignItems="center"
-        justifyContent="center"
-        height={{ xs: 48, sm: 60 }}
-        width={{ xs: 48, sm: 60 }}
-        bgcolor={data.iconBg}
-        borderRadius="50%"
+    <Stack component={Paper} spacing={3} sx={{ minHeight: 140 }}>
+      <Stack direction="row" alignItems="center" justifyContent="space-between">
+        <Stack
+          alignItems="center"
+          justifyContent="center"
+          height={56}
+          width={56}
+          bgcolor={data.iconBg}
+          borderRadius="50%"
+        >
+          <IconifyIcon 
+            icon={data.icon} 
+            fontSize="h4.fontSize"
+            color={data.iconColor} 
+          />
+        </Stack>
+        
+        <Stack alignItems="flex-end" spacing={0.5}>
+          <Typography 
+            variant="h4"
+            color="text.primary" 
+            fontWeight={700}
+          >
+            {data.count}+
+          </Typography>
+          <Typography 
+            variant="caption"
+            color="success.main"
+            fontWeight={600}
+          >
+            +12% ↗
+          </Typography>
+        </Stack>
+      </Stack>
+      
+      <Typography 
+        variant="body1"
+        color="text.secondary"
+        fontWeight={500}
       >
-        <IconifyIcon 
-          icon={data.icon} 
-          fontSize={{ xs: 'h5.fontSize', sm: 'h4.fontSize' }} 
-          color={data.iconColor} 
-        />
-      </Stack>
-
-      <Stack alignItems="center" spacing={{ xs: 0.25, sm: 0.5 }}>
-        <Typography 
-          variant={{ xs: 'h6', sm: 'h5' }} 
-          color="neutral.darker" 
-          fontWeight={800}
-          sx={{ fontSize: { xs: '1.125rem', sm: '1.375rem' } }}
-        >
-          {data.count}+
-        </Typography>
-        <Typography 
-          variant={{ xs: 'caption', sm: 'body2' }} 
-          color="text.secondary"
-          textAlign="center"
-          sx={{ fontSize: { xs: '0.7rem', sm: '0.875rem' } }}
-        >
-          {data.title}
-        </Typography>
-      </Stack>
+        {data.title}
+      </Typography>
     </Stack>
   );
 };
